@@ -13,11 +13,11 @@ public class JpaEntityManagerFactoryUtil {
 
     private JpaEntityManagerFactoryUtil() {}
 
-    public EntityManagerFactory getEntityManagerFactory(){
+    public static EntityManagerFactory getEntityManagerFactory(){
         return ENTITY_MANAGER_FACTORY;
     }
 
-    public EntityManager getEntityManager(){
+    public static EntityManager getEntityManager(){
         return ENTITY_MANAGER_FACTORY.createEntityManager();
     }
 }
