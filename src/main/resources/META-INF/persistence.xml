@@ -6,12 +6,12 @@
 
     <persistence-unit name="jpa_hibernate_task" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>by.it.model</class>
+        <class>by.it.model.Employee</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
 
             <property name="hibernate.connection.url"
-                      value="jdbc:h2:mem:persistence-example;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE"/>
+                      value="jdbc:h2:mem:hibernate-task;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE"/>
 
             <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
             <property name="hibernate.connection.username" value="root"/>
