@@ -1,0 +1,33 @@
+﻿Create console application with JPA or Hibernate
+* for demonstration implementation use Unit tests or Main method
+
+List of models:
+•	Employee
+•	EmployeeStatus
+•	Address
+•	EmployeePersonalInfo 
+•	Project
+•	Unit
+
+Requirements:
+
+1.	EmployeeStatus should be Enum type
+2.	Employee has attribute 'external'
+3.	Address should be embedded to Employee object
+4.	Relationship between Employee and EmployeePersonalInfo should be one-to-one
+5.	Relationship between Employee and Project should be many-to-many
+6.	Relationship between Unit and Employee should be one-to-many
+
+Implement simple layer of Service API which provides functional:
+
+Take into account and develop the following:
+
+1.	Create Employee / Unit / Project
+2.	Find employee / Unit / Project by id
+3.	Delete employee / Unit / Project by id
+4.	Update Employee / Unit / Project by id
+
+5.	Add Employee to Unit by id’s
+6.	Assign Employee for Project by id’s
+7.	Get Projects with Employees which are not external 
+8.	Get Projects with only Employees which are with external 
