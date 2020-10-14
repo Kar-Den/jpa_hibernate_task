@@ -5,10 +5,8 @@ import lombok.Builder;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
@@ -20,6 +18,9 @@ public class EmployeePersonalInfo {
     @Id
     @GeneratedValue
     private long id;
+
+    @Enumerated(EnumType.STRING)
+    private EmployeeStatus employeeStatus;
 
     private String numberPassport;
 }

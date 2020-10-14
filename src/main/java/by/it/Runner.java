@@ -2,6 +2,7 @@ package by.it;
 
 import by.it.model.Employee;
 import by.it.model.EmployeePersonalInfo;
+import by.it.model.EmployeeStatus;
 import org.h2.tools.Server;
 import javax.persistence.EntityManager;
 import java.sql.SQLException;
@@ -28,7 +29,10 @@ public class Runner {
                 .external(false)
                 .build();
 
-        EmployeePersonalInfo personalInfo = EmployeePersonalInfo.builder().numberPassport("3210781PB12314").build();
+        EmployeePersonalInfo personalInfo = EmployeePersonalInfo.builder()
+                .numberPassport("3210781PB12314")
+                .employeeStatus(EmployeeStatus.WORKING)
+                .build();
         employee.setPersonalInfo(personalInfo);
 
         Employee employee1 = Employee.builder()
@@ -38,7 +42,10 @@ public class Runner {
                 .external(false)
                 .build();
 
-        EmployeePersonalInfo personalInfo1 = EmployeePersonalInfo.builder().numberPassport("3208057PИ987412").build();
+        EmployeePersonalInfo personalInfo1 = EmployeePersonalInfo.builder()
+                .numberPassport("3208057PИ987412")
+                .employeeStatus(EmployeeStatus.WORKING)
+                .build();
         employee1.setPersonalInfo(personalInfo1);
 
 
