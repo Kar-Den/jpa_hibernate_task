@@ -1,12 +1,13 @@
 package by.it.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import lombok.Builder;
+import lombok.Setter;
 
+import javax.persistence.*;
 
+@Setter
+@Builder
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -18,9 +19,10 @@ public class Employee {
 
     private String surName;
 
-    private Character age;
+    private int age;
 
     @OneToOne
+//    @JoinColumn (name = "personal_info_id", referencedColumnName = "id")
     private EmployeePersonalInfo personalInfo;
 
 }
