@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @ToString
@@ -13,6 +14,7 @@ import javax.persistence.Table;
 public class EmployeePersonalInfo {
 
     @Id
+    @GeneratedValue
     private long id;
 
     private String numberPassport;

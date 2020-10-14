@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
+    @GeneratedValue
     private long id;
 
     private String name;
@@ -22,7 +23,7 @@ public class Employee {
 
     private int age;
 
-    @OneToOne
+    @OneToOne(orphanRemoval = true)
 //    @JoinColumn (name = "personal_info_id", referencedColumnName = "id")
     private EmployeePersonalInfo personalInfo;
 

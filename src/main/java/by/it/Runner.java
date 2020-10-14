@@ -30,16 +30,33 @@ public class Runner {
         EmployeePersonalInfo personalInfo = EmployeePersonalInfo.builder().numberPassport("3210781PB12314").build();
         employee.setPersonalInfo(personalInfo);
 
+        Employee employee1 = Employee.builder()
+                .name("Иван")
+                .surName("Семёнов")
+                .age(35)
+                .build();
+
+        EmployeePersonalInfo personalInfo1 = EmployeePersonalInfo.builder().numberPassport("3208057PИ987412").build();
+        employee1.setPersonalInfo(personalInfo1);
+
 
         em.getTransaction().begin();
         em.persist(personalInfo);
         em.persist(employee);
+        em.persist(personalInfo1);
+        em.persist(employee1);
         em.getTransaction().commit();
         em.close();
 
+
+
         EntityManager em1 = JpaEntityManagerFactoryUtil.getEntityManager();
-        Employee employeeFromTable = em1.find(Employee.class, 0L);
+        Employee employeeFromTable = em1.find(Employee.class, 2L);
+        System.out.println("Удаляю");
         System.out.println(employeeFromTable);
+        em1.getTransaction().begin();
+        em1.remove(employeeFromTable);
+        em1.getTransaction().commit();
         em1.close();
 
     }
