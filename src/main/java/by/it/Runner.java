@@ -37,5 +37,10 @@ public class Runner {
         em.getTransaction().commit();
         em.close();
 
+        EntityManager em1 = JpaEntityManagerFactoryUtil.getEntityManager();
+        Employee employeeFromTable = em1.find(Employee.class, 0L);
+        System.out.println(employeeFromTable);
+        em1.close();
+
     }
 }

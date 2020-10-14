@@ -3,9 +3,10 @@ package by.it.model;
 
 import lombok.Builder;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
-
+@ToString
 @Setter
 @Builder
 @Entity
@@ -24,5 +25,16 @@ public class Employee {
     @OneToOne
 //    @JoinColumn (name = "personal_info_id", referencedColumnName = "id")
     private EmployeePersonalInfo personalInfo;
+
+    public Employee() {
+    }
+
+    public Employee(long id, String name, String surName, int age, EmployeePersonalInfo personalInfo) {
+        this.id = id;
+        this.name = name;
+        this.surName = surName;
+        this.age = age;
+        this.personalInfo = personalInfo;
+    }
 
 }
