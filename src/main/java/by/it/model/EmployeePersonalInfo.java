@@ -1,12 +1,16 @@
 package by.it.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString
 @Builder
 @Entity
@@ -18,12 +22,4 @@ public class EmployeePersonalInfo {
     private long id;
 
     private String numberPassport;
-
-    public EmployeePersonalInfo() {
-    }
-
-    public EmployeePersonalInfo(long id, String numberPassport) {
-        this.id = id;
-        this.numberPassport = numberPassport;
-    }
 }

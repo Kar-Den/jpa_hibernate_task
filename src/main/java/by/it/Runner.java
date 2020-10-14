@@ -25,6 +25,7 @@ public class Runner {
                 .name("Денис")
                 .surName("Карпенко")
                 .age(35)
+                .external(false)
                 .build();
 
         EmployeePersonalInfo personalInfo = EmployeePersonalInfo.builder().numberPassport("3210781PB12314").build();
@@ -34,6 +35,7 @@ public class Runner {
                 .name("Иван")
                 .surName("Семёнов")
                 .age(35)
+                .external(false)
                 .build();
 
         EmployeePersonalInfo personalInfo1 = EmployeePersonalInfo.builder().numberPassport("3208057PИ987412").build();
