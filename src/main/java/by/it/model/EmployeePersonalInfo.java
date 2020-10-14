@@ -23,4 +23,7 @@ public class EmployeePersonalInfo {
     private EmployeeStatus employeeStatus;
 
     private String numberPassport;
+
+    @Embedded
+    private Address address;
 }

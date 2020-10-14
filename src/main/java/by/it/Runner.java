@@ -1,5 +1,6 @@
 package by.it;
 
+import by.it.model.Address;
 import by.it.model.Employee;
 import by.it.model.EmployeePersonalInfo;
 import by.it.model.EmployeeStatus;
@@ -32,6 +33,11 @@ public class Runner {
         EmployeePersonalInfo personalInfo = EmployeePersonalInfo.builder()
                 .numberPassport("3210781PB12314")
                 .employeeStatus(EmployeeStatus.WORKING)
+                .address(Address.builder()
+                        .city("Гомель, п.Чёнки")
+                        .street("ул.Севруковская")
+                        .homNumber("10")
+                        .build())
                 .build();
         employee.setPersonalInfo(personalInfo);
 
@@ -45,6 +51,11 @@ public class Runner {
         EmployeePersonalInfo personalInfo1 = EmployeePersonalInfo.builder()
                 .numberPassport("3208057PИ987412")
                 .employeeStatus(EmployeeStatus.WORKING)
+                .address(Address.builder()
+                        .city("Гомель")
+                        .street("пр.Речицкий")
+                        .homNumber("99")
+                        .build())
                 .build();
         employee1.setPersonalInfo(personalInfo1);
 
