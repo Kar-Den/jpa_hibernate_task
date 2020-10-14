@@ -8,6 +8,8 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>by.it.model.Employee</class>
         <class>by.it.model.Unit</class>
+        <class>by.it.model.EmployeePersonalInfo</class>
+
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
 
