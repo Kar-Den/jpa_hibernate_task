@@ -59,25 +59,32 @@ public class Runner {
                 .build();
         employee1.setPersonalInfo(personalInfo1);
 
+        Employee employee2 = Employee.builder()
+                .name("Алексей")
+                .surName("Верезубов")
+                .age(30)
+                .external(false)
+                .build();
+
+
+        EmployeePersonalInfo personalInfo2 = EmployeePersonalInfo.builder()
+                .numberPassport("8519674MB951753")
+                .employeeStatus(EmployeeStatus.WORKING)
+                .address(Address.builder()
+                        .city("Гомель")
+                        .street("Весёлая 1-А")
+                        .homNumber("55-ххх")
+                        .build())
+                .build();
+
+        employee2.setPersonalInfo(personalInfo2);
 
         em.getTransaction().begin();
-        em.persist(personalInfo);
         em.persist(employee);
-        em.persist(personalInfo1);
         em.persist(employee1);
+        em.persist(employee2);
         em.getTransaction().commit();
         em.close();
-
-
-
-        EntityManager em1 = JpaEntityManagerFactoryUtil.getEntityManager();
-        Employee employeeFromTable = em1.find(Employee.class, 2L);
-        System.out.println("Удаляю");
-        System.out.println(employeeFromTable);
-        em1.getTransaction().begin();
-        em1.remove(employeeFromTable);
-        em1.getTransaction().commit();
-        em1.close();
 
     }
 }

@@ -26,4 +26,9 @@ public class EmployeePersonalInfo {
 
     @Embedded
     private Address address;
+
+    @OneToOne (mappedBy = "personalInfo", fetch = FetchType.LAZY)
+    private Employee employee;
+
+
 }

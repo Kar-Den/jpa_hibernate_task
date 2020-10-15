@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name;
@@ -24,8 +24,8 @@ public class Employee {
 
     private int age;
 
-    @OneToOne(orphanRemoval = true)
-//    @JoinColumn (name = "personal_info_id", referencedColumnName = "id")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @PrimaryKeyJoinColumn
     private EmployeePersonalInfo personalInfo;
 
     private boolean external;
