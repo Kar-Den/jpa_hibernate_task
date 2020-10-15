@@ -1,5 +1,6 @@
 package by.it;
 
+import by.it.dao.EmployeeDao;
 import by.it.model.Address;
 import by.it.model.Employee;
 import by.it.model.EmployeePersonalInfo;
@@ -79,12 +80,10 @@ public class Runner {
 
         employee2.setPersonalInfo(personalInfo2);
 
-        em.getTransaction().begin();
-        em.persist(employee);
-        em.persist(employee1);
-        em.persist(employee2);
-        em.getTransaction().commit();
-        em.close();
+        EmployeeDao employeeDao = new EmployeeDao();
+        employeeDao.saveInDB(employee);
+        employeeDao.saveInDB(employee1);
+        employeeDao.saveInDB(employee2);
 
     }
 }
