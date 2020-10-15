@@ -19,13 +19,19 @@ public class EmployeePersonalInfo {
     @GeneratedValue
     private long id;
 
+
     @Enumerated(EnumType.STRING)
+    @Column (name = "employee_status", length = 50)
     private EmployeeStatus employeeStatus;
 
+
+    @Column(name = "number_passport", length = 25)
     private String numberPassport;
+
 
     @Embedded
     private Address address;
+
 
     @OneToOne (mappedBy = "personalInfo", fetch = FetchType.LAZY)
     private Employee employee;
