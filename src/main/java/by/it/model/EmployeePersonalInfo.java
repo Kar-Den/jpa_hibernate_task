@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class EmployeePersonalInfo {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
 

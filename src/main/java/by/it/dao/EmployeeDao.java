@@ -18,6 +18,11 @@ public class EmployeeDao {
     public void saveAllInDB(List<Employee> employees) {
         EntityManager em = JpaEntityManagerFactoryUtil.getEntityManager();
 
+        /**todo Правильно сохраняю?
+        *  уходят ли запросы в БД при этом пачкой?
+         *  есть ли способ сначало выдать всем employee из списка id (заранее зарезервированные хибернейтом)
+         *  в сделать вставку одним инсертом. Похоже на ерунду :)
+         *  http://joxi.ru/52abE77CkedWBA*/
         em.getTransaction().begin();
         for (Employee employee : employees) {
             em.persist(employee);

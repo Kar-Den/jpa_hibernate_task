@@ -1,6 +1,5 @@
 package by.it.model;
 
-
 import lombok.*;
 import javax.persistence.*;
 
@@ -13,7 +12,6 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
 
@@ -29,8 +27,8 @@ public class Employee {
     private boolean external;
 
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @PrimaryKeyJoinColumn
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
     private EmployeePersonalInfo personalInfo;
 
 
