@@ -90,5 +90,15 @@ public class Runner {
         EmployeeDao employeeDao = new EmployeeDao();
         employeeDao.saveAllInDB(employeesList);
 
+        System.out.println();
+        System.out.println("find employee by ID:");
+        Employee employeeFind = employeeDao.findByID(1L);
+        System.out.println(employeeFind.getId() + " " +
+                employeeFind.getName() + " " +
+                employeeFind.getSurName() + " " +
+                employeeFind.getAge() + " " +
+                employeeFind.isExternal() + " " +
+                employeeFind.getPersonalInfo());
+
     }
 }

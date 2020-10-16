@@ -26,4 +26,10 @@ public class EmployeeDao {
         em.close();
     }
 
+    public Employee findByID(Long id){
+        EntityManager em = JpaEntityManagerFactoryUtil.getEntityManager();
+        Employee employee = em.find(Employee.class, id);
+        return employee;
+    }
+
 }

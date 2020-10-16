@@ -5,10 +5,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
+//@EqualsAndHashCode(exclude = "personalInfo")
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Setter
+//@Setter
+//@Getter
+@Data
 @Builder
 @Entity
 @Table(name = "employees")
@@ -25,6 +28,7 @@ public class Employee {
 
     @Column (name = "sur_name", length = 50)
     private String surName;
+
 
     private boolean external;
 

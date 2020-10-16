@@ -1,15 +1,15 @@
 package by.it.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
+@EqualsAndHashCode /* (exclude = "employee")*/
+
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+//@ToString
+@Data
 @Builder
 @Entity
 @Table(name = "employees_personal_info")
