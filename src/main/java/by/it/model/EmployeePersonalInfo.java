@@ -3,6 +3,7 @@ package by.it.model;
 import lombok.*;
 import javax.persistence.*;
 
+@EqualsAndHashCode(exclude = "employee")
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -12,7 +13,6 @@ import javax.persistence.*;
 public class EmployeePersonalInfo {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
 
@@ -29,7 +29,8 @@ public class EmployeePersonalInfo {
     private Address address;
 
 
-    @OneToOne (mappedBy = "personalInfo", fetch = FetchType.LAZY)
+    @OneToOne (fetch = FetchType.LAZY)
+    @MapsId
     private Employee employee;
 
     @Override

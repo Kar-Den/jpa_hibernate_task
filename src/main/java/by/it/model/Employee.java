@@ -3,8 +3,10 @@ package by.it.model;
 import lombok.*;
 import javax.persistence.*;
 
+@EqualsAndHashCode (exclude = "personalInfo")
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString (exclude = "personalInfo")
 @Data
 @Builder
 @Entity
@@ -12,6 +14,8 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = true)
     private long id;
 
 
@@ -27,8 +31,8 @@ public class Employee {
     private boolean external;
 
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
+    @OneToOne(mappedBy = "employee", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL, orphanRemoval = true)
     private EmployeePersonalInfo personalInfo;
 
 

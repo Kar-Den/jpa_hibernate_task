@@ -14,8 +14,8 @@ Requirements:
 1.	EmployeeStatus should be Enum type
 2.	Employee has attribute 'external'
 3.	Address should be embedded to Employee object
--->4.	Relationship between Employee and EmployeePersonalInfo should be one-to-one (bidirectional)
-5.	Relationship between Employee and Project should be many-to-many
+4.	Relationship between Employee and EmployeePersonalInfo should be one-to-one (bidirectional)
+-->5.	Relationship between Employee and Project should be many-to-many
 6.	Relationship between Unit and Employee should be one-to-many
 
 Implement simple layer of Service API which provides functional:
