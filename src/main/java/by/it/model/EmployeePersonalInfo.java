@@ -1,14 +1,10 @@
 package by.it.model;
 
 import lombok.*;
-
 import javax.persistence.*;
-
-@EqualsAndHashCode /* (exclude = "employee")*/
 
 @AllArgsConstructor
 @NoArgsConstructor
-//@ToString
 @Data
 @Builder
 @Entity
@@ -36,5 +32,13 @@ public class EmployeePersonalInfo {
     @OneToOne (mappedBy = "personalInfo", fetch = FetchType.LAZY)
     private Employee employee;
 
-
+    @Override
+    public String toString() {
+        return "EmployeePersonalInfo{" +
+                "id=" + id +
+                ", employeeStatus=" + employeeStatus +
+                ", numberPassport='" + numberPassport + '\'' +
+                ", address=" + address.toString() +
+                '}';
+    }
 }

@@ -2,15 +2,10 @@ package by.it.model;
 
 
 import lombok.*;
-
 import javax.persistence.*;
 
-//@EqualsAndHashCode(exclude = "personalInfo")
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-//@Setter
-//@Getter
 @Data
 @Builder
 @Entity
@@ -29,10 +24,9 @@ public class Employee {
     @Column (name = "sur_name", length = 50)
     private String surName;
 
+    private int age;
 
     private boolean external;
-
-    private int age;
 
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
